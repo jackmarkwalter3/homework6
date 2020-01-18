@@ -27,6 +27,11 @@ $.ajax({
     var humidity = response.main.humidity;
     var windSpeed = response.wind.speed;
     
+    localStorage.setItem(city + " tempCurrent", temp);
+    localStorage.setItem(city + " humidityCurrent", humidity);
+    localStorage.setItem(city + " windSpeedCurrent", windSpeed);
+
+
     var lat = response.coord.lat;
     var lon = response.coord.lon;
     
@@ -45,6 +50,8 @@ $.ajax({
 
         var qURLThird = "http://api.openweathermap.org/data/2.5/forecast?appid=" + ApiKey + "&lat=" + lat + "&lon=" + lon;
 
+        localStorage.setItem(city + " uvCurrent", uvIndex);
+
         $.ajax({
             url: qURLThird,
             method: "GET"
@@ -54,6 +61,12 @@ $.ajax({
             for(var i = 0; i < 5; i++) {
                 console.log(response3.list[i].main.temp);
                 console.log(response3.list[i].main.humidity);
+
+                var futureTemp = response3.list[i].main.temp;
+                var futureHumidity = response3.list[i].main.humidity;
+
+                localStorage.setItem(city + " tempDay" + i, futureTemp);
+                localStorage.setItem(city + " humidityFuture", futureHumidity);
             }
         })
     })
