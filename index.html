@@ -1,19 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Homework 6</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <a class="waves-effect waves-light btn">button</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+    <div class="container-sm">
+        <div class="row top">
+            <h1>Weather Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Search for a City:</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-inline">
+                            <label for="City Input" class="sr-only">City</label>
+                            <input type="city" class="form-control" id="city-name" placeholder="City">
+                            <div class="form-group mx-sm-3 mb-2">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="list-group">
+                            <li class="list-group-item" id="city0">City 1</li>
+                            <li class="list-group-item" id="city1">City 2</li>
+                            <li class="list-group-item" id="city2">City 3</li>
+                            <li class="list-group-item" id="city3">City 4</li>
+                            <li class="list-group-item" id="city4">City 5</li>
+                            <li class="list-group-item" id="city5">City 6</li>
+                            <li class="list-group-item" id="city6">City 7</li>
+                            <li class="list-group-item" id="city7">City 8</li>
+                            <li class="list-group-item" id="city8">City 9</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8" id="right-side">
+                <div class="row">
+                    <div class="col-sm-12" id="weather-dashboard">
+                        <h3>City Name (Date) Weather Emoji</h3>
+                        <br>
+                        <p id="current-temp">Temperature:</p>
+                        <p id="current-humidity">Humidity: </p>
+                        <p id="current-wind-speed">Wind Speed:</p>
+                        <p id="current-uv-index">UV Index</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <br>
+                                <p class="card-text" id="temp-day-0">Temp</p>
+                                <p class="card-text" id="humidity-day-0">Humidity</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <br>
+                                <p class="card-text" id="temp-day-1">Temp</p>
+                                <p class="card-text" id="humidity-day-1">Humidity</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <br>
+                                <p class="card-text" id="temp-day-2">Temp</p>
+                                <p class="card-text" id="humidity-day-2">Humidity</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <br>
+                                <p class="card-text" id="temp-day-3">Temp</p>
+                                <p class="card-text" id="humidity-day-3">Humidity</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <br>
+                                <p class="card-text" id="temp-day-4">Temp</p>
+                                <p class="card-text" id="humidity-day-4">Humidity</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src= "script.js"></script>
-    
+    <script src="script.js"></script>
+
 </body>
+
 </html>

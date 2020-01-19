@@ -9,29 +9,31 @@ var city = "Atlanta";
 
 //Then save all of that information to local storage
 //Need to save city to local storage to show on sideBar
-//Then pull of that information from local storage to display onclick
+//Then pull that information from local storage to display onclick
 
 counter = 0;
 function setCounter() {
     var test = localStorage.getItem("city0");
     if(test === "") {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 9; i++) {
             localStorage.setItem("city" + i, "");
     }
         counter = 0;
     }
     else {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 9; i++) {
             test = localStorage.getItem("city" + i);
             if(test === "") {
                 counter = i;
             }
-            else if (counter === 4) {
+            else if (counter === 8) {
                 counter = 0;
             }
         }
     }
 };
+
+console.log(counter);
 var qURLFirst = "https://api.openweathermap.org/data/2.5/weather?q=" + city + ",us&APPID=" + ApiKey;
 
 $.ajax({
@@ -44,7 +46,7 @@ $.ajax({
     console.log(response.wind.speed);
     console.log(city);
 
-    var temp = response.main.temp;
+    var temp = (response.main.temp - 273.15) * 9 / 5 + 32;
     var humidity = response.main.humidity;
     var windSpeed = response.wind.speed;
     
@@ -78,7 +80,7 @@ $.ajax({
             method: "GET"
         }).then(function(response3) {
             console.log(response3);
-            if(counter === 4) {
+            if(counter === 8) {
                 counter = 0;
             }
             else {
@@ -88,7 +90,7 @@ $.ajax({
                 console.log(response3.list[i].main.temp);
                 console.log(response3.list[i].main.humidity);
 
-                var futureTemp = response3.list[i].main.temp;
+                var futureTemp = (response3.list[i].main.temp  - 273.15) * 9 / 5 + 32;
                 var futureHumidity = response3.list[i].main.humidity;
 
                 localStorage.setItem(city + " tempDay" + i, futureTemp);
