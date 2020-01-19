@@ -55,7 +55,7 @@
             <div class="col-sm-8" id="right-side">
                 <div class="row">
                     <div class="col-sm-12" id="weather-dashboard">
-                        <h3>City Name (Date) Weather Emoji</h3>
+                        <h3 id="city-today">City Name (Date) Weather Emoji</h3 =>
                         <br>
                         <p id="current-temp">Temperature:</p>
                         <p id="current-humidity">Humidity: </p>
@@ -67,8 +67,8 @@
                     <div class="col-sm-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <h5 class="card-title" id="day-0"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <br>
                                 <p class="card-text" id="temp-day-0">Temp</p>
                                 <p class="card-text" id="humidity-day-0">Humidity</p>
@@ -79,8 +79,8 @@
                     <div class="col-sm-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <h5 class="card-title" id="day-1"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <br>
                                 <p class="card-text" id="temp-day-1">Temp</p>
                                 <p class="card-text" id="humidity-day-1">Humidity</p>
@@ -91,8 +91,8 @@
                     <div class="col-sm-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <h5 class="card-title" id="day-2"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <br>
                                 <p class="card-text" id="temp-day-2">Temp</p>
                                 <p class="card-text" id="humidity-day-2">Humidity</p>
@@ -103,8 +103,8 @@
                     <div class="col-sm-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <h5 class="card-title" id="day-3"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <br>
                                 <p class="card-text" id="temp-day-3">Temp</p>
                                 <p class="card-text" id="humidity-day-3">Humidity</p>
@@ -115,8 +115,8 @@
                     <div class="col-sm-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Emoji</h6>
+                                <h5 class="card-title" id="day-4"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <br>
                                 <p class="card-text" id="temp-day-4">Temp</p>
                                 <p class="card-text" id="humidity-day-4">Humidity</p>
@@ -132,6 +132,7 @@
     </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
